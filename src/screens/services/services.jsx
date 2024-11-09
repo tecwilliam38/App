@@ -22,7 +22,6 @@ function Services(props) {
         try {
             const response = await api.get("/barbers/" + id_barber + "/services");
             if (response.data) {
-                console.log(response.data);
                 setBarberServices(response.data)
             }
         } catch (error) {

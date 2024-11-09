@@ -3,20 +3,9 @@ import ProtectedRoutes from './routes.protected.js';
 import PublicRoutes from './routes.open.js';
 
 import { AuthContext } from '../context/auth.js';
-import { ImageBackground, Text, View } from 'react-native';
-import { ActivityIndicator, StyleSheet } from 'react-native';
-import {
-     BallIndicator,
-     BarIndicator,
-     DotIndicator,
-     MaterialIndicator,
-     PacmanIndicator,
-     PulseIndicator,
-     SkypeIndicator,
-     UIActivityIndicator,
-     WaveIndicator,
-} from 'react-native-indicators';
-// npm i react-native-indicators
+import { ImageBackground } from 'react-native';
+import { BarIndicator } from 'react-native-indicators';
+
 function Routes() {
 
      const { user } = useContext(AuthContext);
@@ -28,7 +17,7 @@ function Routes() {
                          source={require("../../assets/splash.png")}
                          resizeMode='stretch'
                          style={{ flex: 1, alignItems: "center", justifyContent: "center", transform: "scale" }}>
-                         <BarIndicator color="#FFF" style={{top:160}} size={60} />
+                         <BarIndicator color="#FFF" style={{ top: 160 }} size={60} />
                     </ImageBackground>
                </>
           )

@@ -54,8 +54,14 @@ export const styles = {
         paddingVertical:20,
 
     },
+    footerText: {
+        color: "#ccc",
+        paddingHorizontal: 5,
+        fontSize: 15
+    },
     footerLink: {
-        color: COLORS.white
+        color: COLORS.white,
+        fontSize:15
     }
 
 }

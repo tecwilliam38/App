@@ -10,7 +10,7 @@ import api from '../../constants/api';
 
 
 export default function SignInScreen(props) {
-     const { container, containerLogo, logo, tileText, bodyStyle, keyboardStyle } = styles;
+     const { container, containerLogo, logo, tileText, bodyStyle, keyboardStyle, footerLink, footerText, footer  } = styles;
      const { setUser } = useContext(AuthContext);
      const bg = require("../../assets/bgLogin.png")
      const logoLogin = require("../../assets/icon.png")
@@ -87,10 +87,10 @@ export default function SignInScreen(props) {
                                         }
                                    />
                                    <Button onPress={HandleSignin} text="Login" theme="primary" />
-                                   <View style={styles.footer}>
-                                        <Text>Não tenho conta. </Text>
+                                   <View style={footer}>
+                                        <Text style={footerText}>Não tenho conta. </Text>
                                         <TouchableOpacity onPress={ClickSignUp} >
-                                             <Text style={styles.footerLink}
+                                             <Text style={footerLink}
                                              >Criar conta agora.
                                              </Text>
                                         </TouchableOpacity>

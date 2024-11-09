@@ -8,10 +8,10 @@ export const styles = {
         justifyContent: "space-beween",
         alignItems: "center",
     },
-    containerLogo: {        
+    containerLogo: {
         alignItems: "center",
         marginTop: 10,
-        marginBottom:2,
+        marginBottom: 2,
     },
     logo: {
         width: 120,
@@ -32,12 +32,12 @@ export const styles = {
     },
     keyboardStyle: {
         width: "100%",
-        justifyContent:"center",
-        marginBottom:30,
+        justifyContent: "center",
+        marginBottom: 30,
         backgroundColor: "rgba(255,255,255,0.3)",
         borderRadius: 12,
         paddingVertical: 15,
-        paddingHorizontal: 10,        
+        paddingHorizontal: 10,
     },
     containerInput: {
         marginBottom: 15
@@ -51,11 +51,17 @@ export const styles = {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "row",
-        paddingVertical:20,
+        paddingVertical: 20,
 
     },
+    footerText: {
+        color: "#ccc",
+        paddingHorizontal: 5,
+        fontSize: 15
+    },
     footerLink: {
-        color: COLORS.white
+        color: COLORS.white,
+        fontSize: 15
     }
 
 }

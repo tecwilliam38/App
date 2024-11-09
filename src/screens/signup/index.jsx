@@ -9,7 +9,7 @@ import { AuthContext } from '../../context/auth';
 import api from '../../constants/api';
 
 export default function SignUpScreen(props) {
-     const { container, containerLogo, logo, tileText, bodyStyle, keyboardStyle } = styles;
+     const { container, containerLogo, logo, tileText, bodyStyle, keyboardStyle, footerLink, footerText, footer } = styles;
      const [name, setName] = useState("");
      const [email, setEmail] = useState("");
      const [password, setPassword] = useState("");
@@ -91,10 +91,10 @@ export default function SignUpScreen(props) {
                                    }
                               />
                               <Button onPress={HandleSignUp} text="Cadastro" theme="primary" />
-                              <View style={styles.footer}>
-                                   <Text>Não tenho conta. </Text>
+                              <View style={footer}>
+                                   <Text style={footerText}>Já tenho conta. </Text>
                                    <TouchableOpacity onPress={() => props.navigation.goBack()}>
-                                        <Text style={styles.footerLink}>
+                                        <Text style={footerLink}>
                                              Fazer login.
                                         </Text>
                                    </TouchableOpacity>

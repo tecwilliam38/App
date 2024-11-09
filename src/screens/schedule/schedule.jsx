@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Alert, Text, View } from "react-native";
 import { styles } from "./schedule.style.js";
 import { Calendar, LocaleConfig } from "react-native-calendars";
 import { ptBR } from "../../constants/calendar.js";
@@ -16,47 +16,26 @@ function Schedule(props) {
 
     const [selectedDate, setSelectedDate] = useState("");
     const [selectedHour, setSelectedHour] = useState("");
-    const [dataLoad, setDataLoad] = useState([]);
 
     async function ClickButton() {
-        if(selectedDate && selectedHour === dataLoad.booking_date && dataLoad.booking_hour){
-            alert("Data indisponível")
-        }
         try {
             const response = await api.post("/agenda", {
                 id_barber,
                 id_service,
-                booking_date: selectedDate, 
+                booking_date: selectedDate,
                 booking_hour: selectedHour
             });
             if (response.data?.id_appointment) {
                 props.navigation.navigate("Calendar");
             }
-        } catch (error) {
-            if (error.response?.data.error)
-                console.log(error.response.data.error);
-        }
-    }
-
-    async function LoadServices() {
-        try {
-            const response = await api.get("/agenda/all");
-            if (response.data) {
-                setDataLoad(response.data)
-                console.log(response.data.id_appointment);
-                if(selectedDate && selectedHour === dataLoad.booking_date && dataLoad.booking_hour){
-                    Alert.alert("Data indisponível")
-                }                
+            else{
+                Alert.alert("Data indisponível");
             }
         } catch (error) {
             if (error.response?.data.error)
                 console.log(error.response.data.error);
         }
     }
-
-    useEffect(() => {
-        LoadServices();
-    }, [])
 
     return <View style={styles.container}>
         <View>

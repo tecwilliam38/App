@@ -26,9 +26,6 @@ export default function ProtectedRoutes() {
                     headerTitle:"Serviços" ,
                     headerTitleAlign:"center",
                     headerShadowVisible:false,
-                    headerStyle:{
-                         // backgroundColor:COLORS.red,
-                    },
                     headerTintColor: COLORS.white,
                }}
                />

@@ -32,10 +32,9 @@ export default function SignInScreen(props) {
                     email,
                     password,
                });
-               // Alert.alert("Erro")
                if (response.data) {
                     console.log(response.data.token);
-                    // Aqui ele salva o token no cabeçário para reaproveitar:
+                    //Guarda o token no cabeçário para reaproveitar na aplicação:
                     api.defaults.headers.common['authorization'] = "Bearer " + response.data.token;
                     setUser(response.data)
                }
